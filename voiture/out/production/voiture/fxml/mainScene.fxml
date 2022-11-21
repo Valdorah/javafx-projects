@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+    <fx:define>
+        <Integer fx:id="myInt" fx:value="-1"/>
+    </fx:define>
+    <left>
+        <BorderPane>
+            <center>
+                <ListView fx:id="voitures" />
+            </center>
+            <bottom>
+                <Button onAction="#ajouterVoiture">Ajouter une voiture</Button>
+            </bottom>
+        </BorderPane>
+    </left>
+    <center>
+        <BorderPane>
+            <center>
+                <ListView fx:id="couleurs" disable="${voitures.selectionModel.selectedIndex == myInt}"/>
+            </center>
+            <top>
+                <FlowPane>
+                    <TextField fx:id="nomVoiture" disable="${voitures.selectionModel.selectedIndex == myInt}"/>
+                    <ColorPicker fx:id="picker" disable="${couleurs.selectionModel.selectedIndex == myInt}"/>
+                </FlowPane>
+            </top>
+        </BorderPane>
+    </center>
+</BorderPane>

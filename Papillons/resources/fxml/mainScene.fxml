@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+    <fx:define>
+        <Integer fx:id="myInt" fx:value="-1" />
+    </fx:define>
+    <left>
+        <BorderPane>
+            <center>
+                <ListView fx:id="foret"/>
+            </center>
+            <bottom>
+                <FlowPane alignment="CENTER">
+                    <Button onAction="#ajouterPapillon">Ajouter un papillon</Button>
+                    <Button disable="${foret.selectionModel.selectedIndex == myInt}" onAction="#supprimerPapillon">Supprimer un papillon</Button>
+                </FlowPane>
+            </bottom>
+        </BorderPane>
+    </left>
+    <center>
+        <BorderPane>
+            <top>
+                <TextField disable="${foret.selectionModel.selectedIndex == myInt}" fx:id="nomPapillon" />
+            </top>
+            <center>
+                <ListView fx:id="couleurs" disable="${foret.selectionModel.selectedIndex == myInt}"/>
+            </center>
+            <bottom>
+                <FlowPane alignment="CENTER">
+                    <Button disable="${foret.selectionModel.selectedIndex == myInt}" onAction="#ajouterCouleur">Ajouter une couleur</Button>
+                    <Button disable="${couleurs.selectionModel.selectedIndex == myInt}" onAction="#supprimerCouleur">Supprimer une couleur</Button>
+                    <ColorPicker fx:id="picker" disable="${couleurs.selectionModel.selectedIndex == myInt}"/>
+                </FlowPane>
+            </bottom>
+        </BorderPane>
+    </center>
+</BorderPane>

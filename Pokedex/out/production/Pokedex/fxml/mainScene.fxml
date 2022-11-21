@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="view.MainScene">
+    <fx:define>
+        <Integer fx:id="myInt" fx:value="-1"/>
+    </fx:define>
+    <left>
+        <BorderPane>
+            <top>
+                <ListView fx:id="maListView"/>
+            </top>
+            <bottom>
+                <Button onAction="#addPokemon">Ajouter un pokémon</Button>
+            </bottom>
+        </BorderPane>
+    </left>
+    <center>
+        <FlowPane>
+            <Label>Nom : </Label>
+            <TextField fx:id="nomPokemonTf" disable="${maListView.selectionModel.selectedIndex == myInt}"/>
+        </FlowPane>
+    </center>
+</BorderPane>

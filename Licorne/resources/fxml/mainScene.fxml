@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="view.MainScene">
+    <left>
+        <BorderPane>
+            <center>
+                <ListView fx:id="elfes"/>
+            </center>
+            <bottom>
+                <Button onAction="#ajouterElfe">Ajouter un elfe</Button>
+            </bottom>
+        </BorderPane>
+    </left>
+    <center>
+        <BorderPane>
+            <top>
+                <ListView fx:id="licornes" />
+            </top>
+            <bottom>
+                <TextField fx:id="nomElfe" />
+            </bottom>
+        </BorderPane>
+    </center>
+</BorderPane>
